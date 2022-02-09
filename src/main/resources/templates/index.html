@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Printers</title>
+</head>
+<body>
+    <center><h1>Impresoras Disponibles</h1>
+        <br/>
+        <br/>
+        <br/>
+        <h3 color="red">Choose printer for use</h3>
+        <div th:if="${printers != null and !printers.empty}">
+            <table border="1">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Referencia</th>
+                    <th>Imprimir</th>
+                </tr>
+                <tr th:each="printer : ${printers}">
+                    <td th:text="${printer.name}" width="32%"></td>
+                    <td th:text="${printer.mark}"  width="25%"></td>
+                    <td th:text="${printer.reference}"  width="28%"></td>
+                    <td><input type="submit" value="imprimir"/></td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${printers == null or printers.empty}">
+            No hay impresoras disponibles
+        </div>
+        <br/>
+        <br/>
+        <a th:href="@{/add}" backgroundcolor="blue">
+            <button>Create Printer</button>
+        </a>
+    </center>
+
+<!--    <div><img src="../static/printer.256x256.png" alt="img"></div>-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Printer</title>
+</head>
+<body>
+    <center><h1>Add new Printer</h1>
+
+        <form th:action="@{/add}" method="post" th:object="${printer}">
+            <label>Nombre</label>
+            <input type="text" name="name" th:field="*{name}">
+            <label>Marca</label>
+            <input type="text" name="mark" th:field="*{mark}">
+            <label>Referencia</label>
+            <input type="text" name="reference" th:field="*{reference}">
+            <br/>
+            <br/>
+            <center><input type="submit" value="New Printer"></center>
+        </form>
+        <br/>
+        <br/>
+        <a th:href="@{/}">
+            <button>Regresar</button>
+        </a>
+    </center>
+</body>
+</html>
