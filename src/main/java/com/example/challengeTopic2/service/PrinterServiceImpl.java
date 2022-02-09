@@ -1,6 +1,6 @@
 package com.example.challengeTopic2.service;
 
-import com.example.challengeTopic2.dao.IPersonaDao;
+import com.example.challengeTopic2.dao.IPrinterDao;
 import com.example.challengeTopic2.domain.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 public class PrinterServiceImpl implements PrinterService {
 
     @Autowired
-    private IPersonaDao iPersonaDao;
+    private IPrinterDao iPersonaDao;
 
     @Override
     @Transactional(readOnly = true)
